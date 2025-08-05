@@ -1,0 +1,61 @@
+def get_response(user_input):
+    user_input = user_input.lower()  # Convert input to lowercase for easy matching
+
+    if "admission" in user_input or "criteria" in user_input:
+        return "The admission criteria include a valid entrance exam score and 12th-grade marks."
+
+    elif "location" in user_input or "campus" in user_input:
+        return "The campus is located in Puttaparthi, near Bedupalli."
+
+    elif "courses" in user_input or "offer" in user_input:
+        return "We offer undergraduate and postgraduate courses in Engineering and Business."
+
+    elif "placement" in user_input or "placements" in user_input:
+        return "Our placement cell helps students get jobs with top companies."
+
+    elif "faculty" in user_input or "teachers" in user_input:
+        return "Our teachers are experienced and supportive."
+
+    elif "classroom" in user_input or "facilities" in user_input:
+        return "We have modern classrooms and well-equipped labs."
+
+    elif "training" in user_input or "workshop" in user_input or "seminar" in user_input:
+        return "We hold workshops and training sessions to improve skills."
+
+    elif "internship" in user_input:
+        return "We help students get internships in reputed companies."
+
+    elif "guest lecture" in user_input:
+        return "We organize guest lectures by experts regularly."
+
+    elif "extra curricular" in user_input or "extracurricular" in user_input or "activities" in user_input:
+        return "Students can join sports, cultural events, and clubs."
+
+    elif "industrial visit" in user_input:
+        return "We arrange industrial visits to give real-world experience."
+
+    elif "help" in user_input or "faq" in user_input:
+        return ("You can ask about: Admission criteria, Campus location, Courses offered, "
+                "Placements, Faculty, Classroom facilities, Trainings and workshops, "
+                "Internships, Guest lectures, Extracurricular activities, Industrial visits. "
+                "Type 'exit' to quit.")
+
+    else:
+        return "Oops! I didn’t quite catch that. You can type 'help' to see what questions I can answer."
+
+
+def chatbot():
+    print("Welcome to Sanskrithi School Of Engineering ChatBot!")
+    print("Type your question or 'help' for options. Type 'exit' to quit.\n")
+
+    while True:
+        user_input = input("You: ").strip()
+        if user_input.lower() == "exit":
+            print("Bot: Thanks for chatting! Goodbye.")
+            break
+        response = get_response(user_input)
+        print("Bot:", response)
+
+
+if __name__ == "__main__":
+    chatbot()
